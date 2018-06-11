@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Баг-трекер</string>
+    <string name="name_product">Название продукта</string>
+    <string name="author">Автор</string>
+    <string name="time">Время</string>
+    <string name="name_bug">Название бага</string>
+    <string name="desc_bug">Примечание к багу</string>
+    <string name="comment">Комментарий...</string>
+    <string name="products">Продукты"</string>
+
+    <string name="testmem">/testmem</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="chat_discussion">Чат для обсуждений</string>
+    <string name="chat_flood">Чат для флуда</string>
+    <string name="group_vk">Группа ВК</string>
+
+    <string name="activity_auth">Авторизация</string>
+    <string name="activity_bug_tracker">Баг-трекер</string>
+    <string name="activity_new_report">Добавить отчёт</string>
+    <string name="activity_about_profile">Информация о профиле</string>
+    <string name="activity_view_report">Просмотр отчёта</string>
+    <string name="activity_view_photo">Просмотр фото</string>
+    <string name="activity_about">О приложении</string>
+
+    <string name="all_products">Все</string>
+    <string name="my_products">Мои</string>
+
+    <string name="start_text_error">Что-что пошло не так! Перезапустите приложение</string>
+
+    <string name="menu_tracker">Трекер</string>
+    <string name="menu_products">Продукты</string>
+    <string name="menu_my_card">Моя карточка</string>
+    <string name="menu_my_reports">Мои отчёты</string>
+    <string name="menu_bookmark">Закладки</string>
+    <string name="menu_night_theme">Ночная тема</string>
+    <string name="menu_about_app">О приложении</string>
+    <string name="menu_search">Поиск</string>
+
+    <string name="warning">Предупреждение!</string>
+    <string name="warning_2">
+        Данное приложение не является официальной разработкой ВК!
+        Отчёты по приложению отправляйте в чат приложения или на Гитхаб.
+    </string>
+    <string name="ok_button">Окей</string>
+    <string name="reports_on_product">Отчёты по продукту</string>
+    <string name="reports_by_user">Отчёты пользователя</string>
+    <string name="details">Подробности</string>
+    <string name="about_product">О продукте</string>
+    <string name="info">Информация</string>
+    <string name="first_middle_name">Имя Фамилия</string>
+    <string name="at_time_added">Когда был добавлен</string>
+    <string name="status_bug">Статус бага</string>
+    <string name="name">Название</string>
+    <string name="null_reports">N отчётов</string>
+    <string name="reports">отчётов</string>
+    <string name="reduced_comment">Коммент</string>
+    <string name="count_reports">Количество отчётов</string>
+    <string name="refreshed">Обновлён....</string>
+    <string name="comment_added">Комментарий был добавлен</string>
+    <string name="request_accept">Подать заявку</string>
+    <string name="decile_request">Отменить заявку</string>
+    <string name="see">Просмотр</string>
+    <string name="profile_see">Профиль тестера</string>
+    <string name="profile_not_found">Профиль не найден!</string>
+    <string name="logout">Выйти</string>
+
+    <string name="attachments">Вложения</string>
+    <string name="reduced_info">Инфо</string>
+    <string name="info_comments">Комментарии</string>
+
+    <string name="type_image">Изображение</string>
+
+    <string name="empty_comment">Комментарий пустой!</string>
+    <string name="wait_plz">Пожалуйста, подождите</string>
+
+    <string name="error_base_1">Что-то пошло не по плану!</string>
+    <string name="error_no_internet">Нету интернета!</string>
+    <string name="error_access_denied">Нет доступа!</string>
+
+    <string-array name="priorities">
+        <item>Приоритет: низкий</item>
+        <item>Приоритет: средний</item>
+        <item>Приоритет: высокий</item>
+        <item>Приоритет: критический</item>
+    </string-array>
+</resources>

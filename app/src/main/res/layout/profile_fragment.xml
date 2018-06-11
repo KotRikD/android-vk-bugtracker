@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:clipToPadding="false"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    tools:context="ru.kotrik.bugtracker.VKActivities.ActivityProfile">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        app:titleTextColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:elevation="5dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/colorPrimary"/>
+
+    <RelativeLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/cview"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:elevation="3dp"
+        android:layout_height="100dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_avatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp" />
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/img_avatar"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/img_avatar"
+                android:fontFamily="@font/roboto"
+                android:text="@string/first_middle_name"
+                android:textColor="#000"
+                android:layout_marginEnd="10dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txt_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/txt_name"
+                android:layout_below="@+id/txt_name"
+                android:layout_marginEnd="7dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/info"
+                android:textColor="@color/dark_gray"
+                android:textSize="13sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_below="@id/cview"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:elevation="5dp"
+        android:background="@android:color/white"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content">
+
+        <ru.kotrik.bugtracker.CustomClasses.NonScrollListView
+            android:id="@+id/lv_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </ru.kotrik.bugtracker.CustomClasses.NonScrollListView>
+    </RelativeLayout>
+
+</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

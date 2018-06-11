@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txt_status"
+        android:layout_alignStart="@+id/txt_time"
+        android:layout_below="@+id/txt_time"
+        android:layout_marginTop="8dp"
+        android:text="@string/name_bug"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/at_time_added"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp" />
+
+
+    <TextView
+        android:id="@+id/txt_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txt_time"
+        android:layout_alignBottom="@+id/txt_time"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/status_bug"
+        android:textColor="#656565"
+        android:layout_alignEnd="@id/txt_time"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <!--   android:drawSelectorOnTop="false" -->
+    <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/sys_tags"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignEnd="@+id/txt_status"
+        android:layout_alignStart="@+id/txt_time"
+        android:layout_below="@+id/txt_name"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="8dp"
+        android:fadingEdge="horizontal"
+        android:listSelector="@android:color/transparent"
+        android:requiresFadingEdge="horizontal|vertical" />
+
+
+</RelativeLayout>

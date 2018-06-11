@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_tracker"
+        android:enabled="true"
+        android:title="@string/menu_tracker"
+        android:icon="@drawable/ic_bug_report_black_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_products"
+        android:enabled="true"
+        android:icon="@drawable/ic_products_black_24dp"
+        android:title="@string/menu_products"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_person_white_24dp"
+        android:title="@string/menu_my_card"
+        app:showAsAction="always" />
+</menu>

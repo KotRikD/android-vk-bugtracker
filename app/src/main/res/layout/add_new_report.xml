@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".VKActivities.ActivityAddNewReport" >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_select"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/select_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Выберите продукт"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/bug_product"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_below="@id/select_product"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:fadingEdge="horizontal"
+            android:listSelector="@android:color/transparent"
+            android:requiresFadingEdge="horizontal|vertical"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_below="@id/rl_select"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/name_bug"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#dadada"
+            android:capitalize="sentences"
+            android:gravity="center|left|top"
+            android:minLines="1"
+            android:hint="Название бага"
+            android:paddingBottom="19.0dip"
+            android:textColor="#ff2e3033"
+            android:textColorHint="#ff909499"
+            android:textSize="16.0dip" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/bug_platform"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_below="@id/name_bug"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fadingEdge="horizontal"
+            android:listSelector="@android:color/transparent"
+            android:requiresFadingEdge="horizontal|vertical"/>
+
+
+        <EditText
+            android:id="@+id/description_bug"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bug_platform"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#dadada"
+            android:paddingBottom="19.0dip"
+            android:capitalize="sentences"
+            android:gravity="center|left|top"
+            android:minLines="5"
+            android:hint="Описание бага"
+            android:textColor="#ff2e3033"
+            android:textColorHint="#ff909499"
+            android:textSize="16.0dip" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/attachments"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/description_bug"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            />
+
+        <Switch
+            android:id="@+id/hide_documents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/attachments"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Скрыть документы"/>
+
+        <Switch
+            android:id="@+id/vulnerability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hide_documents"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Уязвимость!"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/bug_tags"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_below="@id/vulnerability"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fadingEdge="horizontal"
+            android:listSelector="@android:color/transparent"
+            android:requiresFadingEdge="horizontal|vertical"/>
+
+        <Spinner
+            android:id="@+id/bug_priority"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/bug_tags"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/tag_gray"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/btn_add"
+            style="@style/VKButton.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/bug_priority"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Отправить отчёт" />
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

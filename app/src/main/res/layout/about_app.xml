@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VKActivities.ActivityAboutApp">
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="104.0dip"
+        android:layout_height="104.0dip"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerInside"
+        android:src="@drawable/about_logo" />
+
+    <TextView
+        android:id="@+id/version_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/subhead_gray"
+        tools:text="Версия" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/items_rv"
+        android:elevation="3dp"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:layout_below="@id/version_name"
+        android:layout_marginTop="48dp" />
+
+</RelativeLayout>

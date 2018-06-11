@@ -1,0 +1,48 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Swipe.Back" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ActionBack" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+    <style name="VKUIButton">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">16.0dip</item>
+        <item name="android:paddingTop">5.5dip</item>
+        <item name="android:paddingRight">16.0dip</item>
+        <item name="android:paddingBottom">7.5dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="VKButton.Primary" parent="@style/VKUIButton">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:background">@drawable/btn_vk_primary</item>
+    </style>
+
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/img_avatar"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/img_avatar"
+        android:text="@string/name_product"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp" />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/txt_name"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/img_avatar"
+        android:background="@drawable/btn_vk"
+        android:paddingBottom="8dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="7dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        tools:text="Подать заявку" />
+
+</RelativeLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nsv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@android:color/white"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+ <RelativeLayout
+    android:id="@+id/mainc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/apl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_below="@id/apl"
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="45dp">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_author"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_person_white_24dp" />
+
+        <TextView
+            android:id="@+id/txt_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/img_author"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/img_author"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:text="@string/author"
+            android:textColor="@android:color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txt_author"
+            android:layout_below="@+id/txt_author"
+            android:fontFamily="@font/roboto"
+            android:text="@string/time"
+            android:textColor="#939393"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/img_author"
+            android:background="#e3e3e3" />
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/img_author"
+            android:layout_below="@+id/img_author"
+            android:layout_marginBottom="7dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/name_bug"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/txt_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/txt_name"
+            android:layout_below="@+id/txt_name"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:autoLink="web"
+            android:fontFamily="sans-serif"
+            android:text="@string/desc_bug"
+            android:textColor="@color/dark_gray"
+            android:textSize="13sp" />
+
+        <ru.kotrik.bugtracker.CustomClasses.NonScrollExpandableListView
+            android:id="@+id/lv_new"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_comment" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_chatbox"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/cl"
+        android:layout_marginTop="-45dp"
+        android:background="#ffffff"
+        android:elevation="12dp"
+        android:minHeight="48dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edittext_chatbox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/comment"
+            android:maxLines="6" />
+
+        <ImageButton
+            android:id="@+id/button_chatbox_send"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:scaleType="center"
+            android:text=""
+            android:textSize="14dp"
+            tools:src="@drawable/ic_send_vk_24dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>
+        <!--        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/txt_comment"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/view" /> -->
+
+
+
+</android.support.v4.widget.NestedScrollView>
