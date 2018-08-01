@@ -54,7 +54,7 @@ import ru.kotrik.bugtracker.Helpers.Utils;
 
 public class ActivityBug extends SwipeBackActivity implements View.OnClickListener {
 
-    TextView author, time, name, comment;
+    TextView author, time, name, comment, count;
     CircleImageView civ_author;
     Map<String, String> parsed;
     ExpandableListView elv_main;
@@ -117,6 +117,8 @@ public class ActivityBug extends SwipeBackActivity implements View.OnClickListen
 
         parsed = Authdata.getCookies(getApplicationContext());
         url = getIntent().getStringExtra("url");
+
+        count = findViewById(R.id.txt_count);
 
         metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -317,6 +319,7 @@ public class ActivityBug extends SwipeBackActivity implements View.OnClickListen
             name.setText(s.select("div.bt_report_one_title").text());
             comment.setText(Html.fromHtml(s.select("div.bt_report_one_descr").html()));
 
+            count.setText(s.select("div.bt_report_footer > div.reproducing > div.common_count._common_count").text()+" Воспроизвелось");
 
             for (Element i3: s.select(".bt_report_one_attachs a")) {
                 if(i3.attr("class").startsWith("page_doc_icon")){
@@ -325,7 +328,7 @@ public class ActivityBug extends SwipeBackActivity implements View.OnClickListen
                 attachments.add(i3);
             }
             groups.add(attachments);
-
+            // div.bt_report_footer > div.reproducing > div.common_count ._common_count
             for (Element i2: s.select("div.bt_report_one_info_row.clear_fix")) {
                 info.add(i2);
             }

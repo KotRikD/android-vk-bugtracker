@@ -17,7 +17,7 @@
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="01c01ee77b77ec508e878294f92c74d52f149cca" />
+            android:value="7bd846fcf4d3c029887473e0070b488f7bc1d0df" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

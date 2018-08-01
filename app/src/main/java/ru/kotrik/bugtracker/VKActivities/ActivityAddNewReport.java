@@ -124,7 +124,7 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
                 lProducts.get(position).activated = true;
                 product_id = lProducts.get(position).id;
                 products.getAdapter().notifyDataSetChanged();
-                new CookedDocument(getApplicationContext(), new mCallbackGet(mAct), "https://vk.com/al_bugtracker.php?act=add&al=1").execute();
+                new CookedDocument(getApplicationContext(), new mCallbackGet(mAct), "https://vk.com/al_bugtracker.php?act=add").execute();
             }
 
             @Override public void onLongItemClick(View view, int position) {
@@ -156,7 +156,7 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
             description.setText(savedInstanceState.getString("descr"));
         }
 
-        new CookedDocument(this, new mCallbackStart(), "https://vk.com/al_bugtracker.php?act=add&al=1").execute();
+        new CookedDocument(this, new mCallbackStart(), "https://vk.com/al_bugtracker.php?act=add").execute();
     }
 
 
@@ -243,7 +243,7 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
             lProducts = new ArrayList<NewItem>();
             Matcher m = bt_versions.matcher(d.html());
             while (m.find()) {
-                try {
+                    try {
                     JSONArray jsarray = new JSONArray(m.group(1));
                     for(int i=0; i<jsarray.length(); i++) {
                         JSONArray array = (JSONArray)jsarray.get(i);
