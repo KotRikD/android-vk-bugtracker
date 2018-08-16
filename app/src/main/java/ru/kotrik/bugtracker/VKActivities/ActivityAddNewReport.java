@@ -55,10 +55,10 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
     ProgressBar loading;
 
     RecyclerView products, platforms, tags, attaches;
-    EditText name, description;
+    EditText name, description, fictive, waiting_r;
 
     Switch hideDocument, vulnarability;
-    Spinner priority;
+    Spinner priority, types;
     Button btnadd;
 
     ArrayList<NewItem> lProducts, lPlatforms, lTags;
@@ -106,6 +106,8 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
 
         name = findViewById(R.id.name_bug);
         description = findViewById(R.id.description_bug);
+        fictive = findViewById(R.id.fictive_result_bug);
+        waiting_r = findViewById(R.id.wait_result_bug);
 
         attachadapter = new AddAttachAdapter(this);
         attaches = findViewById(R.id.attachments);
@@ -138,6 +140,7 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
         tags.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         priority = findViewById(R.id.bug_priority);
+        types = findViewById(R.id.bug_type_problem);
         btnadd = findViewById(R.id.btn_add);
         hideDocument = findViewById(R.id.hide_documents);
         vulnarability = findViewById(R.id.vulnerability);
@@ -148,6 +151,11 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
         adapter.setDropDownViewResource(R.layout.add_new_report_spinner);
         priority.setAdapter(adapter);
         priority.setSelection(2);
+
+        ArrayAdapter<String> adapter_t = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.type_problem));
+        types.setAdapter(adapter_t);
+        types.setSelection(1);
 
         btnadd.setOnClickListener(this);
 
@@ -192,7 +200,8 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
                         platforms+=String.valueOf(item.id)+",";
                     }
                 }
-                if(platforms.isEmpty()||tags.isEmpty()||name.getText().toString().isEmpty()||description.getText().toString().isEmpty()) {
+                if(platforms.isEmpty()||tags.isEmpty()||name.getText().toString().isEmpty()||description.getText().toString().isEmpty()
+                   ||fictive.getText().toString().isEmpty()||waiting_r.getText().toString().isEmpty()) {
                     Toast.makeText(this, "Одно из полей не заполнено!", Toast.LENGTH_SHORT).show();
                     break;
                 }
@@ -204,6 +213,9 @@ public class ActivityAddNewReport extends AppCompatActivity implements View.OnCl
                 data.put("product", String.valueOf(product_id));
                 data.put("title", name.getText().toString());
                 data.put("descr", description.getText().toString());
+                data.put("state_supposed", waiting_r.getText().toString());
+                data.put("state_actual", fictive.getText().toString());
+                data.put("issue_type", String.valueOf(types.getSelectedItemPosition()+1));
                 data.put("severity", String.valueOf(priority.getSelectedItemPosition()+1));
                 data.put("tags", tags);
                 data.put("vulnerability", ((vulnarability.isChecked())?"1":"0"));

@@ -83,4 +83,16 @@
         <item>Приоритет: высокий</item>
         <item>Приоритет: критический</item>
     </string-array>
+
+    <string-array name="type_problem">
+        <item>Вылет приложения</item>
+        <item>Зависание приложения</item>
+        <item>Неработающая функциональность</item>
+        <item>Повреждение данных</item>
+        <item>Визуальная производительность</item>
+        <item>Косметическое несоотвествие</item>
+        <item>Ошибка в тексте</item>
+        <item>Пожелание</item>
+    </string-array>
+
 </resources>

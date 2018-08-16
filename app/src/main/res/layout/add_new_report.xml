@@ -39,23 +39,25 @@
 
     <RelativeLayout
         android:id="@+id/rl_main"
-        android:layout_below="@id/rl_select"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_select"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp">
 
 
         <EditText
             android:id="@+id/name_bug"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="#dadada"
             android:capitalize="sentences"
             android:gravity="center|left|top"
-            android:minLines="1"
             android:hint="Название бага"
+            android:minLines="1"
             android:paddingBottom="19.0dip"
             android:textColor="#ff2e3033"
             android:textColorHint="#ff909499"
@@ -67,12 +69,12 @@
             android:layout_width="match_parent"
             android:layout_height="33dp"
             android:layout_below="@id/name_bug"
-            android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:fadingEdge="horizontal"
             android:listSelector="@android:color/transparent"
-            android:requiresFadingEdge="horizontal|vertical"/>
+            android:requiresFadingEdge="horizontal|vertical" />
 
 
         <EditText
@@ -80,15 +82,51 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/bug_platform"
-            android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:backgroundTint="#dadada"
-            android:paddingBottom="19.0dip"
             android:capitalize="sentences"
             android:gravity="center|left|top"
-            android:minLines="5"
             android:hint="Описание бага"
+            android:minLines="5"
+            android:paddingBottom="19.0dip"
+            android:textColor="#ff2e3033"
+            android:textColorHint="#ff909499"
+            android:textSize="16.0dip" />
+
+        <EditText
+            android:id="@+id/wait_result_bug"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/description_bug"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#dadada"
+            android:capitalize="sentences"
+            android:gravity="center|left|top"
+            android:hint="Фактический резултат"
+            android:minLines="2"
+            android:paddingBottom="19.0dip"
+            android:textColor="#ff2e3033"
+            android:textColorHint="#ff909499"
+            android:textSize="16.0dip" />
+
+        <EditText
+            android:id="@+id/fictive_result_bug"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wait_result_bug"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#dadada"
+            android:capitalize="sentences"
+            android:gravity="center|left|top"
+            android:hint="Ожидаемый результат"
+            android:minLines="2"
+            android:paddingBottom="19.0dip"
             android:textColor="#ff2e3033"
             android:textColorHint="#ff909499"
             android:textSize="16.0dip" />
@@ -98,52 +136,62 @@
             android:id="@+id/attachments"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_below="@id/description_bug"
-            android:layout_marginTop="16dp"
+            android:layout_below="@id/fictive_result_bug"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            />
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp" />
 
         <Switch
             android:id="@+id/hide_documents"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/attachments"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Скрыть документы"/>
+            android:text="Скрыть документы" />
 
         <Switch
             android:id="@+id/vulnerability"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/hide_documents"
-            android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Уязвимость!"/>
+            android:text="Уязвимость!" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/bug_tags"
             android:layout_width="match_parent"
             android:layout_height="33dp"
             android:layout_below="@id/vulnerability"
-            android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:fadingEdge="horizontal"
             android:listSelector="@android:color/transparent"
-            android:requiresFadingEdge="horizontal|vertical"/>
+            android:requiresFadingEdge="horizontal|vertical" />
+
+        <Spinner
+            android:id="@+id/bug_type_problem"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/bug_tags"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/tag_gray"
+            android:padding="8dp" />
 
         <Spinner
             android:id="@+id/bug_priority"
             android:layout_width="match_parent"
             android:layout_height="38dp"
-            android:layout_below="@id/bug_tags"
-            android:layout_marginEnd="16dp"
+            android:layout_below="@id/bug_type_problem"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/tag_gray"
             android:padding="8dp" />
 
@@ -153,10 +201,10 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_below="@id/bug_priority"
-            android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:text="Отправить отчёт" />
 
 
